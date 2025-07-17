@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.byteqore</groupId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<artifactId>personal-finance-tracker-parent</artifactId>
+	<description>Parent service for Personal Finance Tracker</description>
+
+	<modules>
+
+		<module>statement-ingestion-service</module>
+		<module>transaction-service</module>
+		<module>notification-service</module>
+		<module>reporting-service</module>
+		<module>scheduler-service</module>
+		<module>file-watcher-service</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Centralized versioning for Spring Boot -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>3.2.5</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- Spring Boot Plugin -->
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
